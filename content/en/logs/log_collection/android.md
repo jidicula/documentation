@@ -505,6 +505,12 @@ logger.addAttribute("version_code", BuildConfig.VERSION_CODE)
 logger.addAttribute("version_name", BuildConfig.VERSION_NAME)
 ```
 
+Attributes can be added globally across all Logs instances using:
+
+```kotlin
+Logs.addAttributes("version_code", BuildConfig.VERSION_CODE)
+```
+
 The `<ATTRIBUTE_VALUE>` can be any primitive, `String`, or Date.
 
 ##### Remove attributes
@@ -517,6 +523,12 @@ logger.removeAttribute("version_code")
 
 // This removes the attribute "version_name" from all further log send.
 logger.removeAttribute("version_name")
+```
+
+To remove a global attribute from all Logs instances:
+
+```kotlin
+Logs.removeAttribute("version_code")
 ```
 
 ## Batch collection

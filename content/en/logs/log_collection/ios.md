@@ -524,6 +524,22 @@ logger.addAttribute(forKey: "device-model", value: UIDevice.current.model)
 {{% /tab %}}
 {{< /tabs >}}
 
+Attributes can be added globally across all Logs instances using:
+
+{{< tabs >}}
+{{% tab "Swift" %}}
+```swift
+// This adds an attribute "device-model" with a string value
+Logs.addAttribute(forKey: "device-model", value: UIDevice.current.model)
+```
+{{% /tab %}}
+{{% tab "Objective-C" %}}
+```objective-c
+[Logs addAttributeForKey:@"device-model" value:UIDevice.currentDevice.model];
+```
+{{% /tab %}}
+{{< /tabs >}}
+
 The `<ATTRIBUTE_VALUE>` can be anything conforming to `Encodable` such as `String`, `Date`, custom `Codable` data model, and more.
 
 ##### Remove attributes
@@ -540,6 +556,22 @@ logger.removeAttribute(forKey: "device-model")
 {{% tab "Objective-C" %}}
 ```objective-c
 [logger removeAttributeForKey:@"device-model"];
+```
+{{% /tab %}}
+{{< /tabs >}}
+
+To remove a global attribute from all Logs instances:
+
+{{< tabs >}}
+{{% tab "Swift" %}}
+```swift
+// This removes the attribute "device-model" from all further log send.
+Logs.removeAttribute(forKey: "device-model")
+```
+{{% /tab %}}
+{{% tab "Objective-C" %}}
+```objective-c
+[Logs removeAttributeForKey:@"device-model"];
 ```
 {{% /tab %}}
 {{< /tabs >}}
